@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Level 2 - Login Bypass</title>
+</head>
+<body>
+    <div class="terminal">
+        <h2>🔐 Level 2: Login Bypass via SQL Injection</h2>
+        <div class="description">
+            <p><strong>Mission Brief:</strong> You're trying to break into a restricted admin panel guarded by a username-password combo.</p>
+            <p><strong>Goal:</strong> Bypass the login system using SQL Injection. You must log in as the admin.</p>
+            <p><strong>Guide:</strong> Look at how login queries are usually formed. Can you trick it into thinking you entered the correct credentials?</p>
+        </div>
+        
+        <p>{{ hint }}</p>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="password" placeholder="Password">
+            <button type="submit" class="btn">Login</button>
+        </form>
+       
+        {% if flag %}
+            <div class="flag">{{ flag }}</div>
+            <a href="/level3" class="btn">Proceed to Level 3 🚀</a>
+        {% endif %}
+    </div>
+</body>
+</html>

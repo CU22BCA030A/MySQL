@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Level 3 - Union SQL Injection</title>
+</head>
+<body>
+    <div class="terminal">
+        <h2>🕵 Level 3: Union SQL Injection + Enumeration</h2>
+        <div class="description">
+            <p><strong>Mission Brief:</strong> You're now in a product search terminal. But there's more behind the scenes.</p>
+            <p><strong>Goal:</strong> Use SQL Injection to enumerate the database and discover hidden flags.</p>
+            <p><strong>Guide:</strong> Start with basic UNION queries. Try to guess the number of columns and slowly escalate.</p>
+        </div>
+        
+        <p>{{ hint }}</p>
+        <form method="POST">
+            <input type="text" name="search" placeholder="Search product">
+            <button type="submit" class="btn">Search</button>
+        </form>
+        {% if records %}
+            <div class="output">
+                <h3>Results:</h3>
+                <ul>
+                    {% for name, description in records %}
+                        <li>{{ name }} - {{ description }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+        {% endif %}
+        {% if flag %}
+            <div class="flag">{{ flag }}</div>
+            <a href="/flag" class="btn">Finish CTF 🏁</a>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Level 1 - Blind SQL Injection</title>
+</head>
+<body>
+    <div class="terminal">
+        <h2>🔎 Level 1: Blind SQL Injection</h2>
+        <div class="description">
+            <p><strong>Mission Brief:</strong> You've stumbled upon a login terminal that reveals nothing... unless you ask it right.</p>
+            <p>Your goal is to retrieve a hidden flag without any visible errors or direct responses.</p>
+            <p><strong>Guide:</strong> Try injecting input that changes the logic of the query. Think about how to force a TRUE condition silently.</p>
+        </div>        
+        <p>{{ hint }}</p>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username">
+            <button type="submit" class="btn">Submit</button>
+        </form>
+
+        {% if flag %}
+            <div class="flag">{{ flag }}</div>
+            <a href="/level2" class="btn">Proceed to Level 2 🚀</a>
+        {% endif %}
+    </div>
+</body>
+</html>
