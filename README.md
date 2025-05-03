@@ -6,7 +6,7 @@ Welcome to the **MySQL SQL Injection Capture The Flag (CTF)** challenge. In this
 
 1. **Clone this repository:**
     ```
-    git clone <repository-url>
+    git clone https://github.com/CU22BCA030A/MySQL.git
     ```
 
 2. **Install dependencies:**
